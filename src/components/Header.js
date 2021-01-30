@@ -32,14 +32,21 @@ function Header() {
               <input type="text" />
             </div>
           </div>
-          <div className="header__right">{headerOptions}</div>
+          <div className="header__right">
+            {headerOptions}
+            <HeaderOption
+              src="https://upload.wikimedia.org/wikipedia/commons/8/85/Elon_Musk_Royal_Society_%28crop1%29.jpg"
+              title={"Me"}
+            />
+          </div>
           <Avatar
-            className="header__avatar"
+            className="header__avatar--responsive"
             alt="Remy Sharp"
             src="https://upload.wikimedia.org/wikipedia/commons/8/85/Elon_Musk_Royal_Society_%28crop1%29.jpg"
           />
         </div>
       </div>
+
       <div className="header__right--bottom">{headerOptions}</div>
     </Fragment>
   );

@@ -14,3 +14,8 @@
   font-size: 12px;
   font-weight: 400;
 }
+.headerOption__avatar {
+  height: 25px !important;
+  width: 25px !important;
+  object-fit: contain;
+}
