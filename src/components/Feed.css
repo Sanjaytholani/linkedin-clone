@@ -1,6 +1,8 @@
 .feed {
   flex: 0.6;
   margin: 0 20px;
+  overflow-y: scroll;
+  scrollbar-width: 0;
 }
 .feed__inputContainer {
   background-color: #fff;
@@ -38,5 +40,6 @@
   .feed {
     flex: 1;
     margin: 0;
+    margin-bottom: 75px;
   }
 }

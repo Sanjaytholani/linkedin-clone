@@ -2,10 +2,12 @@
   display: flex;
   align-items: center;
   margin-top: 1rem;
-  color: gray;
   cursor: pointer;
+  color: gray;
+
   padding: 0.625rem;
 }
+
 .inputOption:hover {
   background-color: whitesmoke;
   border-radius: 10px;

@@ -1,15 +1,15 @@
 import { Avatar } from "@material-ui/core";
-import React from "react";
 import "./Post.css";
-import ThumbUpIcon from "@material-ui/icons/ThumbUp";
-import CommentIcon from "@material-ui/icons/Comment";
-import ShareIcon from "@material-ui/icons/Share";
-import SendIcon from "@material-ui/icons/Send";
+import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";
+import CommentOutlinedIcon from "@material-ui/icons/CommentOutlined";
+import SendOutlinedIcon from "@material-ui/icons/SendOutlined";
+import ShareOutlinedIcon from "@material-ui/icons/ShareOutlined";
 import InputOption from "./InputOption";
+import { forwardRef } from "react";
 
-function Post({ name, description, message, photo }) {
+const Post = forwardRef(({ name, description, message, photo }, ref) => {
   return (
-    <div className="post">
+    <div ref={ref} className="post">
       <div className="post__header">
         <Avatar src={photo} alt={name} />
 
@@ -22,13 +22,13 @@ function Post({ name, description, message, photo }) {
         <p>{message}</p>
       </div>
       <div className="post__buttons">
-        <InputOption title="Like" Icon={ThumbUpIcon} />
-        <InputOption title="Comment" Icon={CommentIcon} />
-        <InputOption title="Share" Icon={ShareIcon} />
-        <InputOption title="Send" Icon={SendIcon} />
+        <InputOption title="Like" Icon={ThumbUpAltOutlinedIcon} />
+        <InputOption title="Comment" Icon={CommentOutlinedIcon} />
+        <InputOption title="Share" Icon={ShareOutlinedIcon} />
+        <InputOption title="Send" Icon={SendOutlinedIcon} />
       </div>
     </div>
   );
-}
+});
 
 export default Post;

@@ -21,7 +21,7 @@
   padding: 10px;
   display: flex;
   align-items: center;
-  height: 22px;
+  height: 40px;
   border-radius: 5px;
   color: #333;
   background-color: #eef3f8;
@@ -53,24 +53,29 @@
     display: inherit !important;
   }
   .header {
-    width: 95%;
+    width: 100%;
     justify-content: space-evenly;
     border: none;
+    padding-right: 5px;
   }
   .header__left {
     width: 100%;
   }
-
+  .header__search {
+    margin-left: -10px;
+    width: 12rem;
+  }
   .header__right {
     display: none;
   }
 
   .header__right--bottom {
     width: 100%;
+    background-color: #fff;
     display: flex;
     justify-content: space-evenly;
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
     z-index: 999;
     padding: 10px 0;
     border-top: 0.1px solid lightgray;

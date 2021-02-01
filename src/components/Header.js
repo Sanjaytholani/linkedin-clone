@@ -8,7 +8,16 @@ import ChatIcon from "@material-ui/icons/Chat";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import { Fragment } from "react";
 import { Avatar } from "@material-ui/core";
+import { auth } from "../firebase";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "../features/userSlice";
 function Header() {
+  const dispatch = useDispatch();
+  const signOut = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
+  const user = useSelector(selectUser);
   const headerOptions = (
     <>
       <HeaderOption Icon={HomeIcon} title="Home" />
@@ -29,20 +38,24 @@ function Header() {
             />
             <div className="header__search">
               <SearchIcon />
-              <input type="text" />
+              <input placeholder="Search" type="text" />
             </div>
           </div>
           <div className="header__right">
             {headerOptions}
             <HeaderOption
-              src="https://upload.wikimedia.org/wikipedia/commons/8/85/Elon_Musk_Royal_Society_%28crop1%29.jpg"
-              title={"Me"}
+              onClick={signOut}
+              src={user?.photo}
+              title={user.name}
             />
           </div>
+
           <Avatar
+            onClick={signOut}
+            style={{ cursor: "pointer" }}
             className="header__avatar--responsive"
-            alt="Remy Sharp"
-            src="https://upload.wikimedia.org/wikipedia/commons/8/85/Elon_Musk_Royal_Society_%28crop1%29.jpg"
+            alt={user.name}
+            src={user?.photo}
           />
         </div>
       </div>

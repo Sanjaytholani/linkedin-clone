@@ -1,7 +1,7 @@
 .post {
   background-color: #fff;
   padding: 1rem;
-  margin-bottom: 0.625rem;
+  margin: 10px 0;
   border-radius: 10px;
 }
 .post__header {
@@ -23,5 +23,5 @@
 }
 .post__buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
