@@ -43,20 +43,38 @@ function Header() {
           </div>
           <div className="header__right">
             {headerOptions}
-            <HeaderOption
-              onClick={signOut}
-              src={user?.photo}
-              title={user.name}
-            />
-          </div>
 
-          <Avatar
-            onClick={signOut}
-            style={{ cursor: "pointer" }}
-            className="header__avatar--responsive"
-            alt={user.name}
-            src={user?.photo}
-          />
+            {user?.photo ? (
+              <HeaderOption
+                onClick={signOut}
+                src={user?.photo}
+                title={user.name}
+              />
+            ) : (
+              <HeaderOption
+                onClick={signOut}
+                src={user?.email[0]}
+                title={user.name}
+              />
+            )}
+          </div>
+          {user?.photo ? (
+            <Avatar
+              onClick={signOut}
+              style={{ cursor: "pointer" }}
+              className="header__avatar--responsive"
+              alt={user.name}
+              src={user?.photo}
+            />
+          ) : (
+            <Avatar
+              onClick={signOut}
+              style={{ cursor: "pointer" }}
+              className="header__avatar--responsive"
+              alt={user.name}
+              src={user?.email[0]}
+            />
+          )}
         </div>
       </div>
 

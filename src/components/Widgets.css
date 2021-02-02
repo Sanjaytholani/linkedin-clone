@@ -1,18 +1,19 @@
 .widgets {
-  flex: 0.2;
+  flex: 0.15;
   top: 80px;
   position: sticky;
   background-color: white;
   border-radius: 10px;
   border: 1px solid lightgray;
   height: fit-content;
-  padding-bottom: 10px;
+  padding: 1rem;
 }
 .widgets__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5px;
+  margin-bottom: 10px;
 }
 .widgets__header > h2 {
   font-size: 1rem;
@@ -25,9 +26,15 @@
 }
 .widgets__news:hover {
   background-color: whitesmoke;
+  border-radius: 10px;
 }
-.news__right > p > span {
+.news__right > h4 {
   font-weight: bolder;
+}
+.news__right > p {
+  font-size: 1rem;
+  font-weight: bolder;
+  color: gray;
 }
 .news__left {
   color: #0074b1;
